@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { StyledForm, StyledInput, StyledButton } from './SearchForm.styled';
 import { GoSearch } from 'react-icons/go';
 
-export const SearchForm = ({ onSubmit }) => {
+export const SearchForm = ({ onSubmit, value}) => {
   const [query, setQuery] = useState('');
   const handleInputChange = e => {
     setQuery(e.target.value);
@@ -21,10 +21,10 @@ export const SearchForm = ({ onSubmit }) => {
   };
 
   return (
-    <StyledForm onSubmit={handleFormSubmit}>
+    <StyledForm onSubmit={handleFormSubmit} value={query}>
       <StyledInput
         name="movie"
-        value={query}
+        
         placeholder="Search movies..."
         onChange={handleInputChange}
       />{' '}

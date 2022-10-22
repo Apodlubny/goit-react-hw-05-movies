@@ -11,7 +11,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
-    const query = searchParams.get('query');
+    const query = searchParams.get('query') ?? "";
     const location = useLocation();
     const from = `${location.pathname}${location.search}`;
 
@@ -38,10 +38,12 @@ const Movies = () => {
       const handleFormSubmit = newQuery => {
         setSearchParams({ query: newQuery });
       };
+
+
     
       return (
         <main>
-          <SearchForm onSubmit={handleFormSubmit} />
+          <SearchForm onSubmit={handleFormSubmit}/>
           {errorMessage ? (
             <p>{errorMessage}</p>
           ) : (

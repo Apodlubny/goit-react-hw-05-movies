@@ -19,7 +19,7 @@ import { BiArrowBack } from 'react-icons/bi';
 
 export const MovieItem = ({ movie }) => {
   const location = useLocation();
-  const from = location.state.from;
+  const from = location.state?.from ?? "/";
   
   const {
     name,
@@ -34,7 +34,7 @@ export const MovieItem = ({ movie }) => {
   return (
     <>
       <Container>
-        <BackLink to={location.state?.from ?? '/home'}>
+        <BackLink to={from}>
           <BiArrowBack />
         </BackLink>
         <Wrapper>

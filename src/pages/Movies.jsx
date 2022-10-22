@@ -11,7 +11,7 @@ const Movies = () => {
     const [movies, setMovies] = useState([]);
     const [errorMessage, setErrorMessage] = useState('');
     const [searchParams, setSearchParams] = useSearchParams();
-    const query = searchParams.get('query') ?? "";
+    const query = searchParams.get('query');
     const location = useLocation();
     const from = `${location.pathname}${location.search}`;
 
